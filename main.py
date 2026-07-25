@@ -11,7 +11,11 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.client.default import DefaultBotProperties
 
 # ================= НАСТРОЙКИ =================
-BOT_TOKEN = "8881150820:AAGmcQ5FiopF31BirDs7LSaM9woIvoMP20M"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN не найден в переменных окружения!")
+
+
 EXCEL_FILE = "For_BD.xlsx"
 ADMIN_ID = 369162989
 # =============================================
